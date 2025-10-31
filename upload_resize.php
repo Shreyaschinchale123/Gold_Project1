@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
 
             $stmt=$conn->prepare("INSERT INTO gold_items (name,price,tags,image_small,image_medium,image_large) VALUES (?,?,?,?,?,?)");
             $stmt->bind_param("sissss",$name,$price,$tags,$resized_paths['small'],$resized_paths['medium'],$resized_paths['large']);
-            if($stmt->execute()) echo "<h3 style='color:green;'>✅ Product uploaded successfully!</h3>";
+            if($stmt->execute()) echo "<h3 style='color:green;'> Product uploaded successfully!</h3>";
             else echo "<h3 style='color:red;'>DB Error: ".$stmt->error."</h3>";
             $stmt->close();
 
@@ -90,3 +90,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
 </form>
 </body>
 </html>
+
